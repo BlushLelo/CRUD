@@ -1,10 +1,15 @@
 package com.crud.example.CRUD.user.mongo;
 
+
 import com.crud.example.CRUD.user.domain.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-public interface UserRepository extends MongoRepository<User, String>{
+import java.util.List;
 
-    @Override
-    User findOne(String id);
+@Repository
+public interface UserRepository extends MongoRepository<User, String> {
+
+    User findByName(String nome);
+    List<User> findAll();
 }
