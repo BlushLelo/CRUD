@@ -1,7 +1,7 @@
 package com.crud.example.CRUD.user.gateways;
 
 import com.crud.example.CRUD.user.domain.User;
-import com.crud.example.CRUD.user.usecases.CreateUser;
+import com.crud.example.CRUD.user.usecases.Crud;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
+import java.util.List;
+
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @RestController
@@ -18,15 +21,20 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 public class UserController {
 
 
-    private CreateUser createUser;
+    private Crud Crud;
 
     @Autowired
-    public UserController(CreateUser createUser) {
-        this.createUser = createUser;
+    public UserController(Crud Crud) {
+        this.Crud = Crud;
     }
 
-    @RequestMapping(method = POST, consumes = APPLICATION_JSON_UTF8_VALUE, value="/create", produces = APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(method = POST, consumes = APPLICATION_JSON_UTF8_VALUE, produces = APPLICATION_JSON_UTF8_VALUE)
     public void execute(@NotNull @Valid @RequestBody final User user){
-        createUser.createUser(user);
+        Crud.createUser(user);
+    }
+
+    @RequestMapping(method = GET, consumes = APPLICATION_JSON_UTF8_VALUE, produces = APPLICATION_JSON_UTF8_VALUE)
+    public List<User> execute2(){
+        return Crud.findAll();
     }
 }

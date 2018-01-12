@@ -1,4 +1,4 @@
 spring:
   data:
     mongodb:
-      mongodb: mongodb://localhost/CRUD
+      mongodb: mongodb://localhost/Crud

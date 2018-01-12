@@ -5,6 +5,8 @@ import com.crud.example.CRUD.user.mongo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class UserGatewayImpl implements UserGateway {
 
@@ -18,5 +20,10 @@ public class UserGatewayImpl implements UserGateway {
     @Override
     public User save(final User user) {
         return userRepository.save(user);
+    }
+
+    @Override
+    public List<User> findAll() {
+        return userRepository.findAll();
     }
 }

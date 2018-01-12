@@ -7,9 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface UserRepository extends MongoRepository<User, String> {
 
-    User findByName(String nome);
+    User findByNome(String nome);
     List<User> findAll();
 }

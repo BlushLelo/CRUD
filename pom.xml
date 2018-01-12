@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.crud.example</groupId>
-	<artifactId>CRUD</artifactId>
+	<artifactId>Crud</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>CRUD</name>
-	<description>CRUD example with SPRING BOOT</description>
+	<name>Crud</name>
+	<description>Crud example with SPRING BOOT</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

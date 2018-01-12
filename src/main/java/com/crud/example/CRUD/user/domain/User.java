@@ -11,7 +11,7 @@ import javax.annotation.Generated;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection ="Users")
+@Document(collection ="users")
 public class User {
 
     @Id

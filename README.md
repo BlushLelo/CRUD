@@ -1,2 +1,2 @@
-# CRUD
-Java CRUD with Spring Boot and Mongo
+# Crud
+Java Crud with Spring Boot and Mongo
