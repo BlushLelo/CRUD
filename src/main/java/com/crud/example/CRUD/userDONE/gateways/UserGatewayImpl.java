@@ -1,7 +1,7 @@
-package com.crud.example.CRUD.user.gateways;
+package com.crud.example.CRUD.userDONE.gateways;
 
-import com.crud.example.CRUD.user.domain.User;
-import com.crud.example.CRUD.user.mongo.UserRepository;
+import com.crud.example.CRUD.userDONE.domain.User;
+import com.crud.example.CRUD.userDONE.mongo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

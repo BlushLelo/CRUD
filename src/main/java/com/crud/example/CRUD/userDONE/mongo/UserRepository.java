@@ -1,9 +1,8 @@
-package com.crud.example.CRUD.user.mongo;
+package com.crud.example.CRUD.userDONE.mongo;
 
 
-import com.crud.example.CRUD.user.domain.User;
+import com.crud.example.CRUD.userDONE.domain.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

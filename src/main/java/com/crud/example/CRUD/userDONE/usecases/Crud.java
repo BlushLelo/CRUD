@@ -1,7 +1,7 @@
-package com.crud.example.CRUD.user.usecases;
+package com.crud.example.CRUD.userDONE.usecases;
 
-import com.crud.example.CRUD.user.domain.User;
-import com.crud.example.CRUD.user.gateways.UserGatewayImpl;
+import com.crud.example.CRUD.userDONE.domain.User;
+import com.crud.example.CRUD.userDONE.gateways.UserGatewayImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

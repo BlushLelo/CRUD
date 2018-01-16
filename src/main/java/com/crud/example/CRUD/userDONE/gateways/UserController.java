@@ -1,7 +1,7 @@
-package com.crud.example.CRUD.user.gateways;
+package com.crud.example.CRUD.userDONE.gateways;
 
-import com.crud.example.CRUD.user.domain.User;
-import com.crud.example.CRUD.user.usecases.Crud;
+import com.crud.example.CRUD.userDONE.domain.User;
+import com.crud.example.CRUD.userDONE.usecases.Crud;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

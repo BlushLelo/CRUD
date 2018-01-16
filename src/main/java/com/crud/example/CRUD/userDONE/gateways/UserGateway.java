@@ -1,6 +1,6 @@
-package com.crud.example.CRUD.user.gateways;
+package com.crud.example.CRUD.userDONE.gateways;
 
-import com.crud.example.CRUD.user.domain.User;
+import com.crud.example.CRUD.userDONE.domain.User;
 
 import java.util.List;
 
