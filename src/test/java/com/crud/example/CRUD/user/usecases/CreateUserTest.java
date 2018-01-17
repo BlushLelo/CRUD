@@ -1,24 +1,31 @@
-package com.crud.example.CRUD.User;
+package com.crud.example.CRUD.user.usecases;
 
 import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.loader.FixtureFactoryLoader;
-import com.crud.example.CRUD.user.User;
+import com.crud.example.CRUD.user.domain.User;
+import com.crud.example.CRUD.user.gateways.database.UserGateway;
 import com.crud.example.CRUD.user.usecases.CreateUser;
 import com.crud.example.CRUD.user.usecases.SaveUser;
-import org.hamcrest.Matchers;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.*;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
-public class UserTest {
+@RunWith(MockitoJUnitRunner.class)
+public class CreateUserTest {
 
-    CreateUser createUser = new CreateUser();
+    @Mock
+    UserGateway userGateway;
+
+    @InjectMocks
+    CreateUser createUser;
+
 
     @BeforeClass
     public static void setupClass(){
@@ -32,6 +39,9 @@ public class UserTest {
 
         //THEN i try to create it
         User result = createUser.execute(user);
+
+        //Then i call the method save 1 time
+        verify(userGateway, times(0)).save(result);
 
         //Should return a list of error's
         assertNotNull("Não pode ser nulo", result.getErrors());

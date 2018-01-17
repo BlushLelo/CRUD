@@ -3,7 +3,7 @@ package com.crud.example.CRUD.fixtures;
 import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.Rule;
 import br.com.six2six.fixturefactory.loader.TemplateLoader;
-import com.crud.example.CRUD.user.User;
+import com.crud.example.CRUD.user.domain.User;
 
 public class UserFixtures implements TemplateLoader {
 

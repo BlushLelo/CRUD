@@ -1,6 +1,6 @@
-package com.crud.example.CRUD.user;
+package com.crud.example.CRUD.user.domain;
 
-import com.crud.example.CRUD.user.usecases.Error;
+import com.crud.example.CRUD.user.gateways.database.UserGateway;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,5 +20,5 @@ public class User {
 
     private List<Error> errors;
 
-
+    public UserGateway userGateway;
 }

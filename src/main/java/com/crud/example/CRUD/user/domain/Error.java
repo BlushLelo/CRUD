@@ -1,4 +1,4 @@
-package com.crud.example.CRUD.user.usecases;
+package com.crud.example.CRUD.user.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
