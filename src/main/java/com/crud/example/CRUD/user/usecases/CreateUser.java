@@ -32,11 +32,11 @@ public class CreateUser {
             errors.add(new Error("Email is mandatory"));
         }
 
-        user.setErrors(errors);
-
         if(CollectionUtils.isEmpty(user.getErrors())){
-            userGateway.save(user);
+            return userGateway.save(user);
         }
+
+        user.setErrors(errors);
 
         return user;
     }
