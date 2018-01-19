@@ -12,6 +12,7 @@ import org.junit.Test;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.http.HttpStatus;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
@@ -70,6 +71,7 @@ public class UserControllerTest extends AbstractComponentTest {
         assertTrue(resultBody.getId() != null);
         assertTrue(resultBody.getEmail().equals("joaooctf@gmail.com"));
         assertTrue(resultBody.getName().equals("João"));
+
     }
 
     @Test
@@ -96,6 +98,35 @@ public class UserControllerTest extends AbstractComponentTest {
                     .anyMatch(e-> e.getMessage().equals("Email is mandatory")));
     }
 
+    @Test
+    public void updateUserWithSuccess() throws Exception {
+        //Dado um banco de dados vazio
+
+        //Tendo um usuario válido
+        User user = Fixture.from(User.class).gimme("valid");
+
+        //Converto o usuário pra json
+        String json = objectMapper.writeValueAsString(user);
+
+        //Quando realizo um post
+        MvcResult result = mockMvc.perform(post(API_END_POINT).contentType(APPLICATION_JSON)
+                .content(json)).andReturn();
+
+        //Converto meu result pra User
+        User resultBody = convertResponse(result);
+
+        //Converto meu resultBody pra JSON
+
+        String json2 = objectMapper.writeValueAsString(resultBody);
+
+        //Realizo um PUT para atualizar as informações do usuário
+        MvcResult result2 = mockMvc.perform(put(API_END_POINT).contentType(APPLICATION_JSON)
+        .contentType(APPLICATION_JSON).content(json2)).andReturn();
+
+        assertEquals(HttpStatus.OK.value(), result2.getResponse().getStatus());
+
+
+    }
 
     public User convertResponse(MvcResult result) throws Exception{
 
