@@ -29,6 +29,10 @@ public class UserController {
     public ResponseEntity<User> save(@RequestBody User user) {
         User result = createUser.execute(user);
 
+        if (CollectionUtils.isNotEmpty(result.getErrors())){
+            return new ResponseEntity<>(result, HttpStatus.UNPROCESSABLE_ENTITY);
+        }
+
         return new ResponseEntity<>(result, HttpStatus.CREATED);
     }
 
